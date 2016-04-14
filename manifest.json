@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Is Segment Included?",
+  "description": "This extension will let you know if the Segment CDN is included on the page",
+  "version": "1.0",
+  "browser_action": {
+   "default_popup": "app/popup.html",
+   "default_icon": "app/icongreen.png"
+ },
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["app/contentscript.js"]
+  }
+],
+"background": {
+   "persistent": false,
+   "scripts": ["app/background.js"]
+ },
+  "permissions": [
+   "activeTab",
+   "tabs"
+   ]
+}
